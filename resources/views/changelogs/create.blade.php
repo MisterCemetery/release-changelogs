@@ -9,12 +9,20 @@
             {{csrf_field()}}
             <div>
                 <label>Version</label>
-                <input type="text" name="version">
+                <input type="text" name="version" required>
             </div>
 
             <div>
                 <label>Changes</label>
-                <textarea name="changes"></textarea>
+                <textarea name="changes" required></textarea>
+            </div>
+
+            <div>
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
             </div>
 
             <div>

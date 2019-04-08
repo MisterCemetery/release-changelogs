@@ -27,6 +27,11 @@ class ChangelogController extends Controller
 
     public function save() {
 
+        request()->validate([
+            'version'=>'required|min:3',
+            'changes'=>'required|min:3'
+        ]);
+
         $changelog = new ReleaseChangelogs();
 
         $changelog->version = request('version');
@@ -45,6 +50,11 @@ class ChangelogController extends Controller
 
     public function update($id) {
    
+        request()->validate([
+            'version'=>'required',
+            'changes'=>'required'
+        ]);
+
         $changelog = ReleaseChangelogs::find($id);
         $changelog->version = request('version');
         $changelog->changes = request('changes');
