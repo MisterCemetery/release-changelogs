@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/changelogs', 'ChangelogController@index');
-Route::get('/changelogs/create', 'ChangelogController@create');
 Route::post('/changelogs', 'ChangelogController@save');
-Route::post('/changelogs/{changelog}/edit', 'ChangelogController@edit');
+Route::get('/changelogs/create', 'ChangelogController@create');
 Route::patch('/changelogs/{changelog}', 'ChangelogController@update');
 Route::delete('/changelogs/{changelog}', 'ChangelogController@delete');
+Route::post('/changelogs/{changelog}/edit', 'ChangelogController@edit');
