@@ -21,3 +21,4 @@ Route::get('/changelogs/create', 'ChangelogController@create');
 Route::patch('/changelogs/{changelog}', 'ChangelogController@update');
 Route::delete('/changelogs/{changelog}', 'ChangelogController@delete');
 Route::post('/changelogs/{changelog}/edit', 'ChangelogController@edit');
+Route::get('/changelogs/{changelog}/edit', 'ChangelogController@edit');
